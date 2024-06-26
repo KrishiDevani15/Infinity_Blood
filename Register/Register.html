@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- For google icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="Register.css" />
+
+  <title>Registration form</title>
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h2>Registration form</h2>
+    <form action="Register.php" method="POST">
+
+      <fieldset class="form-item-container">
+        <legend>Personal info</legend>
+        <div class="form-item">
+          <span class="material-icons-outlined"> account_circle </span>
+          <input type="text" name="name" id="name" placeholder="Your full Name" required />
+        </div>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> face </span>
+          <select name="gender" id="gender" required>
+            <option value="">--Select your gender--</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> date_range </span>
+          <input type="number" name="age" id="age" placeholder="Age" />
+        </div>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> lock </span>
+          <select name="bloodtype" id="bloodtype" required>
+            <option value="">-- Select your Bloodtype --</option>
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+
+      </fieldset>
+
+      <fieldset class="form-item-container">
+        <legend>Address</legend>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> home </span>
+          <input type="text" name="address" id="address" placeholder="Enter your nearest Landmark" required />
+        </div>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> home </span>
+          <input type="number" name="pincode" id="pincode" placeholder="Enter your Pincode" required />
+        </div>
+      </fieldset>
+
+      <fieldset class="form-item-container">
+        <legend>Contact Info</legend>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> email </span>
+          <input type="email" name="email" id="email" placeholder="Enter your Email" required />
+        </div>
+
+        <div class="form-item">
+          <span class="material-icons-outlined"> phone </span>
+          <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile no." required maxlength="11" />
+        </div>
+      </fieldset>
+      <div>
+        <input type="checkbox" id="eligible" name="eligible" required />
+        <label for="eligible">I do not have any diseases and can donate blood</label>
+      </div>
+      <button type="submit">CONTINUE</button>
+      <a href="/INFINITY-BLOOD/index.html">Home</a>
+    </form>
+  </div>
+  <script>
+    // window.onload = function () {
+    //   alert('WE RECOMMEND YOU TO REGISTER ONLY IF YOU DONT HAVE ANY DISEASE.. AND iF YOUR AGE IS BETWEEN 18-50');
+    // };
+    document.getElementById('age').addEventListener('input', function (e) {
+      const min = 18;
+      const max = 50;
+      let value = parseInt(e.target.value, 10);
+
+      if (value < min) {
+        alert('please enter value between 18 and 50')
+        e.target.value = min;
+      } else if (value > max) {
+        // alert('please enter value less then 50')
+        alert('please enter value between 18 and 50')
+
+
+        e.target.value = max;
+      }
+    });
+
+    document.getElementById('eligible').addEventListener('change', function (e) {
+      if (e.target.checked) {
+        alert('Thank you for confirming you do not have any diseases and can donate blood.');
+      }
+    });
+  </script>
+</body>
+
+</html>
