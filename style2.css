@@ -13,7 +13,7 @@ html {
 #banner {
     /* background: transparent; */
 
-    background: url("/INFINITY-BLOOD/img/back.jpg");
+    background: url("./img/back.jpg");
     background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-blend-mode: darken;
@@ -63,7 +63,7 @@ a {
     height: 2rem;
     background: transparent;
     /* background-color: rgb(1, 1, 1); */
-    background-image: url("/INFINITY-BLOOD/img/logo.png");
+    background-image: url("./img/logo.png");
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
